@@ -1,0 +1,62 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="row">
+<main id="content" role="main" class="main-content small-12 columns">
+	<h2 align="center"><b>Manage Catalog</b></h2>
+<table>
+	<tr>
+		<th valign="middle" headers="name"><p><b>To Input an Album</b></p></th>
+		<th valign="middle" headers="name"><p><b>To Import a Track</b></p></th>
+	</tr>
+	<tr><td valign="top">
+	<ul>
+		<li>Click on Admin button below</li>
+		<li>Click on "albums" table</li>
+		<li>Click "add album" in the upper right corner</li>
+		<li>'Pub date' is the date the album was published, e.g. <em>11/5/2019</em></li>
+		<li>Fill out the form and click "Save"</li>
+		<li>Click the link to the "catalog" in the upper right corner</li>
+		<li>Click "created bys"</li>
+		<li>Input album and artist</li>
+		<li>Click <em>"Save"</em></li>
+		<br>
+		<li><b>If you want to add the artist who created the album:</b>
+			<ul>
+			<li>Click the link to the "catalog" in the upper right corner</li>
+			<li>Click "featured ins"</li>
+			<li>Click "add featured in" in the upper left corner</li>
+			<li>Enter the corresponding Album name and Artist name</li>
+			<li>Click <em>"Save"</em></li>
+			</ul></ul>
+	</td><td valign="top">
+	<ul>
+		<li>Click on "Admin" button below</li>
+		<li>Click on "tracks" table</li>
+		<li>Click "add track" in the upper left corner</li>
+		<li>Fill out the form</li>
+		<li>Enter the Track length in decimal format, e.g. <em>5.20</em></li>
+		<br><br>
+		<li><b>If you want to add featured artists to the track:</b>
+			<ul>
+			<li>Click the link to the "catalog" in the upper right corner</li>
+			<li>Click "featured ins"</li>
+			<li>Click "add featured in" in the upper left corner</li>
+			<li>Enter the corresponding Track name and Artist name</li>
+			<li>Click <em>"Save"</em></li>
+			</ul></ul>
+	</td></tr>
+</table>
+<br>
+	<!-- security measure --> 
+	{% csrf_token %}
+
+	<!-- key name from views.py  -->
+	{{ form }}
+<div align="center">	
+	<a href="{% url 'importHistory' %}" class="button">Import History</a>
+	<a href="{% url 'admin:index' %}" class="button">Admin</a>
+</div>
+</main>
+</div>			
+{% endblock %}

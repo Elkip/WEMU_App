@@ -1,0 +1,15 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+<div class="row">
+<main id="content" role="main" class="main-content small-12 columns">
+	<form method="post">
+	<fieldset align="center"><legend align="center">WEMU Radio Database</legend>
+		<br>
+		<a href="{% url 'viewData' %}" class="button">View Data</a>
+		<a href="{% url 'viewHistory' %}" class="button">View History</a>
+		<a href="{% url 'manageCatalog' %}" class="button">Manage Catalog</a>
+	</fieldset>
+	</form>
+</main>
+</div>
+{% endblock %}

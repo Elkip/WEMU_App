@@ -1,0 +1,31 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+<div class="row">
+<main id="content" role="main" class="main-content small-12 columns">
+	<form action="/insertData" method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	<fieldset><legend align="center">Import Playlist History</legend><br>
+		<p><b>Instructions:</b></p>
+	<ul>
+		<li>Click <a href="https://www.wemu.org/now-playing-playlists" target="_blank">here</a> to generate a new playlist history PDF </li>
+		<li>Choose today's date</li>
+		<li>Click the <em>"Print"</em> button in the lower right corner</li>
+		<li>In the popup window under <em>"Destination"</em> click <em>"Save as PDF"</em></li>
+		<li>Click <em>"Save"</em></li>
+		<li>The file will download to your computer</li>
+		<li>Upload that file on this page by clicking <em>"Choose File"</em> below</li>
+		<li>Click <em>"Submit"</em></li>
+	</ul>
+
+	<p><b>Select a file: </b></p>
+	<input type="file" name="pdf_file" accept="application/pdf" />
+		{% if warning %}
+			<p><text style="color: red">*</text>Please Upload a file</p>
+		{% endif %}
+	</fieldset>
+	<br><br>
+	<button type="submit" name="submit_btn">Submit</button>
+</form>
+</main>
+</div>
+{% endblock %}

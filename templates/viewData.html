@@ -1,0 +1,30 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="row">
+<main id="content" role="main" class="main-content small-12 columns">
+<!-- Output -->
+<form action="/searchData" method="get">
+	<fieldset><legend align = "center">Select Field to Search By</legend><br>
+		<select name="Search_Type">
+                        <option value="TrackName" selected>Track Name</option>
+			<option value="AlbumTitle">Album Title</option>
+			<option value="ArtistName(Artists)">Artist Name (Artists)</option>
+			<option value="ArtistName(Albums)">Artist Name (Albums)</option>
+			<option value="ArtistName(Tracks)">Artist Name (Tracks)</option>
+			<option value="GroupName">Group Name</option>
+                        <option value="LabelName">Label Name</option>
+                        <option value="PublicationYear">Publication Year</option>
+		</select><br><br>
+		<input type="text" name="Search" placeholder="Search" maxlength="40"></td>
+		<input type="submit" value="Submit">
+</fieldset>
+</form>
+</main>
+</div>
+{% if htmlCode %}
+{% autoescape off %}
+{{ htmlCode }}
+{% endautoescape %}
+{% endif %}
+{% endblock %}

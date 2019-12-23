@@ -1,0 +1,16 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="row">
+<main id="content" role="main" class="main-content small-12 columns">
+	<!--LogIn -->
+	<form method="post">
+	<fieldset><legend>Welcome to WEMU Song Database</legend>
+	<h4>Please Log In</h4>											
+	<td><input type="text" name="User" placeholder="Username" maxlength="40"  required></td>
+	<td><input type="text" name="EID" placeholder="EID Number"  maxlength="40"  required></td>
+	</fieldset>
+	</form>
+    		</main>
+</div>		
+{% endblock %}

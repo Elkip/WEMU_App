@@ -1,0 +1,35 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+<div class="row">
+<main id="content" role="main" class="main-content small-12 columns">
+	<form class="site-form" action="{% url 'inputTrack' %}" method="POST">
+	<fieldset><legend align="center">Import Track</legend><br>
+
+	<p><b>Instructions</b></p>
+	<ul>
+		<li>Input the Track information into the form below</li>
+		<li>Enter the Track length in decimal format, e.g. <em>5.20</em></li>
+		<li>After clicking <em>"Submit"</em> you will be redirected back to the home page</li>
+		<br>
+		<li><b>If you want to add featured artists to the track:</b>
+			<ul>
+			<li>After submitting this form, click the <em>"Admin"</em> button and log in</li>
+			<li>Under <em>"Catalog"</em> next to <em>"Featured ins"</em> click the green <em>"+Add"</em> button</li>
+			<li>Enter the corresponding Track name and Artist name</li>
+			<li>Click <em>"Save"</em></li>
+	<br>
+
+	<!-- security measure --> 
+	{% csrf_token %}
+
+	<!-- key name from views.py  -->
+	{{ form }}
+
+	</table>
+	</fieldset>
+	<br><br><input type="submit" value="Submit">
+	</form>
+</main>
+</div>
+{% endblock %}
+    					
